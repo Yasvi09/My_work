@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a = [{"name":"ravi","age":23},{"name":"vasu","age":20},{"name":"het","age":19}]
+      
+        // Get the keys from the first object to create the table headers
+        var headers = Object.keys(a[0]);
+      
+        // Create the table
+        var table = "<table><tr>";
+        for (var i = 0; i < headers.length; i++) {
+          table += "<th>" + headers[i] + "</th>";
+        }
+        table += "</tr>";
+      
+        // Loop through the JSON objects and create table rows
+        for (var i = 0; i < a.length; i++) {
+          table += "<tr>";
+          for (var j = 0; j < headers.length; j++) {
+            table += "<td>" + a[i][headers[j]] + "</td>";x
+          }
+          table += "</tr>";
+        }
+      
+        table += "</table>";
+      
+        // Add the table to the HTML page
+        document.body.innerHTML = table;
+      </script>
+</body>
+</html>
